@@ -24,13 +24,7 @@ All code is provided for research purposes only and without any warranty. Any co
 Compiling
 =========
 
-First compile caffe, by configuring a
-
-    "Makefile.config" (example given in Makefile.config.example)
-
-then make with 
-
-    $ make -j 5 all tools pycaffe 
+build flownet.sln under windows folder
 
 
 Running 
