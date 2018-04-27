@@ -24,8 +24,11 @@ All code is provided for research purposes only and without any warranty. Any co
 Compiling
 =========
 
-build Caffe.sln under windows folder
-
+move　/windows
+copy CommonSettings.props.example to CommonSettings.props
+edit　your path　<CuDnnPath></CuDnnPath>
+edit your path <PythonDir></PythonDir>
+open solution file & build
 
 Running 
 =======
