@@ -24,7 +24,7 @@ All code is provided for research purposes only and without any warranty. Any co
 Compiling
 =========
 
-build flownet.sln under windows folder
+build Caffe.sln under windows folder
 
 
 Running 
