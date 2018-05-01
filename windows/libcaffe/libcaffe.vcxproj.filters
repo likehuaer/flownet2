@@ -37,6 +37,9 @@
     <Filter Include="include\layer">
       <UniqueIdentifier>{d04e5850-efaf-42d2-84b6-6de395cb02e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cu\solvers">
+      <UniqueIdentifier>{48cd08d6-7328-4c6c-b336-35011452e78a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\caffe\util\im2col.cpp">
@@ -318,12 +321,6 @@
     <ClCompile Include="..\..\src\caffe\layers\mean_layer.cpp">
       <Filter>src\layers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\caffe\layers\flo_data_layer.cpp">
-      <Filter>src\layers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\caffe\layers\flowriter_layer.cpp">
-      <Filter>src\layers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\correlation_layer.cpp">
       <Filter>src\layers</Filter>
     </ClCompile>
@@ -331,6 +328,33 @@
       <Filter>src\layers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\resample_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\flow_warp_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\flowriter_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\util\output.cpp">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\augmentation_layer_base.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\util\rng.cpp">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cpp">
       <Filter>src\layers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -617,9 +641,6 @@
     <ClInclude Include="..\..\include\caffe\layers\reduction_layer.hpp">
       <Filter>include\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\caffe\layers\reform_layer.hpp">
-      <Filter>include\layer</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\caffe\layers\relu_layer.hpp">
       <Filter>include\layer</Filter>
     </ClInclude>
@@ -659,10 +680,31 @@
     <ClInclude Include="..\..\include\caffe\layers\mean_layer.hpp">
       <Filter>include\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\caffe\layers\l1loss_layer.hpp">
+    <ClInclude Include="..\..\include\caffe\layers\flo_data_layer.hpp">
       <Filter>include\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\caffe\layers\flo_data_layer.hpp">
+    <ClInclude Include="..\..\include\caffe\layers\generate_augmentation_parameters_layer.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\flow_warp_layer.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\lstm_layer.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\flo_writer_layer.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\l1_loss_layer.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\util\output.hpp">
+      <Filter>include\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\augmentation_layer_base.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\data_augmentation_layer.hpp">
       <Filter>include\layer</Filter>
     </ClInclude>
   </ItemGroup>
@@ -815,6 +857,39 @@
       <Filter>cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\resample_layer.cu">
+      <Filter>cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\flow_warp_layer.cu">
+      <Filter>cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cu">
+      <Filter>cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cu">
+      <Filter>cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cu">
+      <Filter>cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\solvers\sgd_solver.cu">
+      <Filter>cu\solvers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\solvers\adadelta_solver.cu">
+      <Filter>cu\solvers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\solvers\adagrad_solver.cu">
+      <Filter>cu\solvers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\solvers\adam_solver.cu">
+      <Filter>cu\solvers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\solvers\nesterov_solver.cu">
+      <Filter>cu\solvers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\solvers\rmsprop_solver.cu">
+      <Filter>cu\solvers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cu">
       <Filter>cu\layers</Filter>
     </CudaCompile>
   </ItemGroup>
