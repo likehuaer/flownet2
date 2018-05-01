@@ -44,6 +44,7 @@ and download models:
     $ ./download-models.sh 
  
 prepare old style prototext: 
+
     ImageData using
     layer {
         name: "Image1"
