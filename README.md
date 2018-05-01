@@ -43,7 +43,7 @@ and download models:
     $ cd models 
     $ ./download-models.sh 
  
-prepare old style prototext: 
+prepare old style(Flownet) prototext: 
 
     ImageData using
     layer {
@@ -62,6 +62,11 @@ prepare old style prototext:
         source: "./img2.txt"
         batch_size: 1
     }
+
+prepare old style(Flownet) input image txt: 
+
+    script/img0.txt
+    script/img1.txt
 
     $ demo.py (exsample)
 
