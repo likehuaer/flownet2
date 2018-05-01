@@ -68,7 +68,9 @@ prepare old style(Flownet) input image txt:
     script/img0.txt
     script/img1.txt
 
-    $ demo.py (exsample)
+run demo:
+
+    $ demo.py (exsample not yet work)
 
 Training
 ========
