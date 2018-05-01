@@ -44,23 +44,23 @@ and download models:
     $ ./download-models.sh 
  
 prepare old style prototext: 
-	ImageData using
-	layer {
-		name: "Image1"
-		type: "ImageData"
-		top: "img0"
-		image_data_param {
-		source: "./img1.txt"
-		batch_size: 1
-	}
-	layer {
-		name: "Image2"
-		type: "ImageData"
-		top: "img1"
-		image_data_param {
-		source: "./img2.txt"
-		batch_size: 1
-	}
+    ImageData using
+    layer {
+        name: "Image1"
+        type: "ImageData"
+        top: "img0"
+        image_data_param {
+        source: "./img1.txt"
+        batch_size: 1
+    }
+    layer {
+        name: "Image2"
+        type: "ImageData"
+        top: "img1"
+        image_data_param {
+        source: "./img2.txt"
+        batch_size: 1
+    }
 
     $ demo.py (exsample)
 
