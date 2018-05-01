@@ -65,7 +65,7 @@ void DataAugmentationLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom
     this->layer_param_.mutable_param(this->layer_param_.param_size()-1)->set_decay_mult(0.); 
 //     LOG(INFO) << "DEBUG: this->layer_param_.param_size()=" << this->layer_param_.param_size();
 //     LOG(INFO) << "DEBUG: Writing layer_param";
-    WriteProtoToTextFile(this->layer_param_, "/misc/lmbraid17/sceneflownet/dosovits/matlab/test/message.prototxt");
+//    WriteProtoToTextFile(this->layer_param_, "/misc/lmbraid17/sceneflownet/dosovits/matlab/test/message.prototxt");
 //     LOG(INFO) << "DEBUG: Finished writing layer_param";
   } 
 }
