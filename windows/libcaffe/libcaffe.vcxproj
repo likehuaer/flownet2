@@ -86,7 +86,7 @@
       <AdditionalCompilerOptions>/wd 4819</AdditionalCompilerOptions>
     </CudaCompile>
     <ClCompile>
-      <DisableSpecificWarnings>4661;4005;4812;4715;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4661;4005;4812;4715;4819;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -122,6 +122,7 @@
     <ClCompile Include="..\..\src\caffe\layers\cudnn_sigmoid_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_softmax_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_tanh_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\deconv_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\dropout_layer.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="..\..\src\caffe\layers\loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\lrn_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cpp" />
@@ -236,6 +238,7 @@
     <ClInclude Include="..\..\include\caffe\layers\cudnn_sigmoid_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\cudnn_softmax_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\cudnn_tanh_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\data_augmentation_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\data_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\deconv_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\downsample_layer.hpp" />
@@ -373,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\src\caffe\layers\correlation_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\flow_warp_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\l1loss_layer.cu" />
