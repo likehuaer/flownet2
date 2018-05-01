@@ -24,9 +24,9 @@ All code is provided for research purposes only and without any warranty. Any co
 Compiling
 =========
 
-	move　/windows
+	move /windows
 	copy CommonSettings.props.example to CommonSettings.props
-	edit　your path　<CuDnnPath></CuDnnPath>
+	edit your path <CuDnnPath></CuDnnPath>
 	edit your path <PythonDir></PythonDir>
 	open solution file & build
 
@@ -34,9 +34,6 @@ Running
 =======
 
 (this assumes you compiled the code sucessfully) 
-
-IMPORTANT: make sure there is no other caffe version in your python and 
-system paths and set up your environment with: 
 
     $ source set-env.sh 
 
@@ -46,25 +43,26 @@ and download models:
     $ cd models 
     $ ./download-models.sh 
  
-Running a FlowNet on a single image pair ($net is a folder in models): 
+prepare old style prototext: 
+	ImageData using
+	layer {
+		name: "Image1"
+		type: "ImageData"
+		top: "img0"
+		image_data_param {
+		source: "./img1.txt"
+		batch_size: 1
+	}
+	layer {
+		name: "Image2"
+		type: "ImageData"
+		top: "img1"
+		image_data_param {
+		source: "./img2.txt"
+		batch_size: 1
+	}
 
-    $ run-flownet.py /path/to/$net/$net_weights.caffemodel[.h5] \
-                     /path/to/$net/$net_deploy.prototxt.template \ 
-                     x.png y.png z.flo 
-
-(where x.png and y.png are images and z.flo is the output file) 
-
-Running  a FlowNet on lots of image pairs: 
-
-    $ run-flownet-many.py /path/to/$net/$net_weights.caffemodel[.h5] \ 
-                          /path/to/$net/$net_deploy.prototxt.template \
-                           list.txt 
-
-(where list.txt contains lines of the form "x.png y.png z.flo") 
-
-NOTE: If you want to compute many flows, this option is much faster since 
-caffe and the net are loaded only once. 
-
+    $ demo.py (exsample)
 
 Training
 ========
