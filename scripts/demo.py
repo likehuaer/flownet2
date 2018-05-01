@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jun 27 10:30:11 2016
 
-@author: 10008777
+
+@author: wakanawakana
 """
 
 import sys
