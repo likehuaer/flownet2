@@ -104,6 +104,7 @@
     <ClCompile Include="..\..\src\caffe\layers\absval_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\accuracy_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\argmax_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\augmentation_layer_base.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\base_conv_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\base_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\batch_norm_layer.cpp" />
@@ -132,7 +133,8 @@
     <ClCompile Include="..\..\src\caffe\layers\filter_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\flatten_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\flowriter_layer.cpp" />
-    <ClCompile Include="..\..\src\caffe\layers\flo_data_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\flow_warp_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\hdf5_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\hdf5_output_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\hinge_loss_layer.cpp" />
@@ -143,7 +145,11 @@
     <ClCompile Include="..\..\src\caffe\layers\l1loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\log_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\loss_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\lrn_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\mean_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\memory_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\multinomial_logistic_loss_layer.cpp" />
@@ -191,6 +197,8 @@
     <ClCompile Include="..\..\src\caffe\util\insert_splits.cpp" />
     <ClCompile Include="..\..\src\caffe\util\io.cpp" />
     <ClCompile Include="..\..\src\caffe\util\math_functions.cpp" />
+    <ClCompile Include="..\..\src\caffe\util\output.cpp" />
+    <ClCompile Include="..\..\src\caffe\util\rng.cpp" />
     <ClCompile Include="..\..\src\caffe\util\signal_handler.cpp" />
     <ClCompile Include="..\..\src\caffe\util\upgrade_proto.cpp" />
   </ItemGroup>
@@ -208,6 +216,7 @@
     <ClInclude Include="..\..\include\caffe\layers\absval_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\accuracy_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\argmax_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\augmentation_layer_base.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\base_conv_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\base_data_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\batch_norm_layer.hpp" />
@@ -239,7 +248,10 @@
     <ClInclude Include="..\..\include\caffe\layers\exp_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\filter_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\flatten_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\flow_warp_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\flo_data_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\flo_writer_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\generate_augmentation_parameters_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\hdf5_data_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\hdf5_output_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\hinge_loss_layer.hpp" />
@@ -248,10 +260,11 @@
     <ClInclude Include="..\..\include\caffe\layers\infogain_loss_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\inner_product_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\input_layer.hpp" />
-    <ClInclude Include="..\..\include\caffe\layers\l1loss_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\l1_loss_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\log_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\loss_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\lrn_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\lstm_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\mean_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\memory_data_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\multinomial_logistic_loss_layer.hpp" />
@@ -263,7 +276,6 @@
     <ClInclude Include="..\..\include\caffe\layers\prelu_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\python_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\reduction_layer.hpp" />
-    <ClInclude Include="..\..\include\caffe\layers\reform_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\relu_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\resample_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\reshape_layer.hpp" />
@@ -301,6 +313,7 @@
     <ClInclude Include="..\..\include\caffe\util\io.hpp" />
     <ClInclude Include="..\..\include\caffe\util\math_functions.hpp" />
     <ClInclude Include="..\..\include\caffe\util\mkl_alternate.hpp" />
+    <ClInclude Include="..\..\include\caffe\util\output.hpp" />
     <ClInclude Include="..\..\include\caffe\util\rng.hpp" />
     <ClInclude Include="..\..\include\caffe\util\signal_handler.h" />
     <ClInclude Include="..\..\include\caffe\util\upgrade_proto.hpp" />
@@ -360,8 +373,18 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\src\caffe\layers\correlation_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\flow_warp_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\l1loss_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\resample_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\solvers\adadelta_solver.cu" />
+    <CudaCompile Include="..\..\src\caffe\solvers\adagrad_solver.cu" />
+    <CudaCompile Include="..\..\src\caffe\solvers\adam_solver.cu" />
+    <CudaCompile Include="..\..\src\caffe\solvers\nesterov_solver.cu" />
+    <CudaCompile Include="..\..\src\caffe\solvers\rmsprop_solver.cu" />
+    <CudaCompile Include="..\..\src\caffe\solvers\sgd_solver.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(SolutionDir)\CommonSettings.targets" />

@@ -2,7 +2,6 @@
 #include <sstream>
 #include <vector>
 
-#include "caffe/layer.hpp"
 #include "caffe/layers/lpq_loss_layer.hpp"
 #include "caffe/util/io.hpp"
 #include "caffe/util/math_functions.hpp"
@@ -26,14 +25,14 @@ namespace caffe {
         this->layer_param_.lpq_loss_param().q();
       /// Special case: If one of each p and q is given, it's okay to not 
       /// specify a start frame
-      if (start_iters.size() == 0 and
-          ps.size() == 1 and
+      if (start_iters.size() == 0 &&
+          ps.size() == 1 &&
           qs.size() == 1)
       {
-        schedule_.push(new ScheduleStep_(0, ps.Get(0), qs.Get(0)));
-        LOG(INFO) << "Lpq loss layer: Constant parameters"
-                  << " p = "  << schedule_.front()->p
-                  << ", q = " << schedule_.front()->q;
+		  this->schedule_.push(new ScheduleStep_<Dtype>(0, ps.Get(0), qs.Get(0)));
+		LOG(INFO) << "Lpq loss layer: Constant parameters"
+			<< " p = " << this->schedule_.front()->p
+			<< ", q = " << this->schedule_.front()->q;
       }
       else
       {
@@ -100,46 +99,46 @@ namespace caffe {
     }
     
     /// Set up power layer to compute elementwise p-power
-    p_top_vec_.clear();
-    p_top_vec_.push_back(&p_output_);
+    this->p_top_vec_.clear();
+	this->p_top_vec_.push_back(&p_output_);
     LayerParameter p_param;
-    p_param.mutable_power_param()->set_power(schedule_.front()->p);
-    p_param.mutable_power_param()->set_shift(
+	p_param.mutable_power_param()->set_power(schedule_.front()->p);
+	p_param.mutable_power_param()->set_shift(
         this->layer_param_.lpq_loss_param().p_epsilon());
-    p_layer_.reset(new PowerLayer<Dtype>(p_param));
-    p_layer_->SetUp(diff_top_vec_, p_top_vec_);
+	this->p_layer_.reset(new PowerLayer<Dtype>(p_param));
+	this->p_layer_->SetUp(diff_top_vec_, p_top_vec_);
     
     /// Set up convolutional layer to sum all channels
-    sum_top_vec_.clear();
-    sum_top_vec_.push_back(&sum_output_);
+	sum_top_vec_.clear();
+	sum_top_vec_.push_back(&sum_output_);
     LayerParameter sum_param;  
-    sum_param.mutable_convolution_param()->set_num_output(1);
-    sum_param.mutable_convolution_param()->add_kernel_size(1);
-    sum_param.mutable_convolution_param()->mutable_weight_filler()
+	sum_param.mutable_convolution_param()->set_num_output(1);
+	sum_param.mutable_convolution_param()->add_kernel_size(1);
+	sum_param.mutable_convolution_param()->mutable_weight_filler()
                                          ->set_type("constant");
     if(this->layer_param_.lpq_loss_param().l2_prescale_by_channels()) {
-      sum_param.mutable_convolution_param()->mutable_weight_filler()
+		sum_param.mutable_convolution_param()->mutable_weight_filler()
                                            ->set_value(Dtype(1)/
                                                        Dtype(bottom[0]->channels()));
     } else {
-      sum_param.mutable_convolution_param()->mutable_weight_filler()
+		sum_param.mutable_convolution_param()->mutable_weight_filler()
                                            ->set_value(Dtype(1));
     }
-    sum_layer_.reset(new ConvolutionLayer<Dtype>(sum_param));
-    sum_layer_->SetUp(p_top_vec_, sum_top_vec_);
+	sum_layer_.reset(new ConvolutionLayer<Dtype>(sum_param));
+	sum_layer_->SetUp(p_top_vec_, sum_top_vec_);
     
     /// Set up power layer to compute elementwise q-power
-    q_top_vec_.clear();
-    q_top_vec_.push_back(&q_output_);
+	this->q_top_vec_.clear();
+	this->q_top_vec_.push_back(&q_output_);
     LayerParameter q_param;
-    q_param.mutable_power_param()->set_power(schedule_.front()->q);
-    q_param.mutable_power_param()->set_shift(
+	q_param.mutable_power_param()->set_power(schedule_.front()->q);
+	q_param.mutable_power_param()->set_shift(
         this->layer_param_.lpq_loss_param().q_epsilon());
-    q_layer_.reset(new PowerLayer<Dtype>(q_param));
-    q_layer_->SetUp(sum_top_vec_, q_top_vec_);
+	this->q_layer_.reset(new PowerLayer<Dtype>(_q_param));
+	this->q_layer_->SetUp(sum_top_vec_, q_top_vec_);
     
     /// Discard first parameter schedule step
-    schedule_.pop();
+	schedule_.pop();
   }
 
   template <typename Dtype>

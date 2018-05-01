@@ -6,8 +6,8 @@
 #include <utility>
 #include <vector>
 
-#include "caffe/blob.hpp"
 #include "caffe/layer.hpp"
+#include "caffe/blob.hpp"
 #include "caffe/proto/caffe.pb.h"
 
 #include "caffe/layers/loss_layer.hpp"
@@ -25,7 +25,7 @@ namespace caffe {
  */
 
 template <typename Dtype>
-class LpqLossLayer : public LossLayer<Dtype> {
+class LpqLossLayer : public LossLayer<Dtype>{
  public:
   explicit LpqLossLayer(
         const LayerParameter& param)
@@ -49,6 +49,7 @@ class LpqLossLayer : public LossLayer<Dtype> {
   virtual inline int MinBottomBlobs() const { return 1; }
   virtual inline int MaxBottomBlobs() const { return 2; }
   
+
  protected:
   /// @copydoc LpqLossLayer
   virtual void Forward_cpu(
@@ -67,16 +68,16 @@ class LpqLossLayer : public LossLayer<Dtype> {
         const vector<Blob<Dtype>*>& bottom);
 
   /**
-   * See "LpqLossParameter" in caffe.proto
-   */
-  struct ScheduleStep_
-  {
-    ScheduleStep_(unsigned int i, Dtype p, Dtype q)
-      : start_iter(i), p(p), q(q) {}
-    
-    unsigned int start_iter;
-    Dtype p;
-    Dtype q;
+  * See "LpqLossParameter" in caffe.proto
+  */
+  class ScheduleStep_ {
+  public:
+	  ScheduleStep_(unsigned int i, Dtype p, Dtype q)
+		  : start_iter(i), p(p), q(q) {}
+
+	  unsigned int start_iter;
+	  Dtype p;
+	  Dtype q;
   };
   std::queue<ScheduleStep_*> schedule_;
   
