@@ -45,7 +45,8 @@ and download models:
  
 prepare old style(Flownet) prototext: 
 
-    ImageData using
+    prepare tmp_deploy.prototxt from FlowNet2-C_deploy.prototxt.template 
+    ImageData & Flowriter using
     layer {
         name: "Image1"
         type: "ImageData"
@@ -62,6 +63,16 @@ prepare old style(Flownet) prototext:
         source: "./img2.txt"
         batch_size: 1
     }
+    layer {
+        name: "FLOWriter"
+        type: "FLOWriter"
+        bottom: "predict_flow_final"
+        writer_param {
+        folder: "."
+        prefix: "flownets-pred-"
+        suffix: ""
+    }
+}
 
 prepare old style(Flownet) input image txt: 
 
@@ -70,6 +81,8 @@ prepare old style(Flownet) input image txt:
 
 run demo:
 
+    edit demo.py img0 = ''
+    $ cd scripts
     $ demo.py (exsample not yet work)
 
 Training
