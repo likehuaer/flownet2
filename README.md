@@ -24,6 +24,8 @@ All code is provided for research purposes only and without any warranty. Any co
 Compiling
 =========
 
+Only VS2013+CUDA7.5+CUDNN4 64bit
+
 	move /windows
 	copy CommonSettings.props.example to CommonSettings.props
 	edit your path <CuDnnPath></CuDnnPath>
