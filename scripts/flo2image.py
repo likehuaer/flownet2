@@ -36,7 +36,7 @@ def flo_image(flofile):
     v8 = v8.reshape(size[1], size[0], 1)
 
     #img = np.zeros((size[0], size[1], 3), np.uint8)
-    img = cv2.cvtColor(yuv, cv2.COLOR_YCrCb2RGB )
+    img = cv2.cvtColor(yuv, cv2.COLOR_YCrCb2BGR )
     cv2.imwrite('out_color.png', img)
     cv2.imwrite('out_u.png', u8)
     cv2.imwrite('out_v.png', v8)
