@@ -110,12 +110,16 @@
     <ClCompile Include="..\..\src\caffe\layers\base_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\batch_norm_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\batch_reindex_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\bias_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\black_augmentation_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\bnll_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\channel_norm_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\concat_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\contrastive_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\conv_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\correlation_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\correlation_layer1d.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\crop_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_conv_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_lcn_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_lrn_layer.cpp" />
@@ -124,18 +128,28 @@
     <ClCompile Include="..\..\src\caffe\layers\cudnn_sigmoid_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_softmax_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\cudnn_tanh_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\custom_data_layer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\deconv_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\disparity_data_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\downsample_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\dropout_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\dummy_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\eltwise_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\elu_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\embed_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\euclidean_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\exp_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\filter_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\flatten_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\floatreader_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\floatwriter_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\flowriter_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\flow_augmentation_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\flow_warp_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\hdf5_data_layer.cpp" />
@@ -143,8 +157,11 @@
     <ClCompile Include="..\..\src\caffe\layers\hinge_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\im2col_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\image_data_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\imgreader_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\imgwriter_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\infogain_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\inner_product_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\input_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\l1loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\log_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\loss_layer.cpp" />
@@ -158,14 +175,20 @@
     <ClCompile Include="..\..\src\caffe\layers\memory_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\multinomial_logistic_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\mvn_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\neg_relu_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\neuron_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\parameter_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\pfmwriter_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\pooling_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\power_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\prelu_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\recurrent_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\reduction_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\relu_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\resample_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\reshape_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\rnn_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\scale_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\sigmoid_cross_entropy_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\sigmoid_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\silence_layer.cpp" />
@@ -379,15 +402,29 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\src\caffe\layers\accum_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\bias_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\black_augmentation_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\channel_norm_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\correlation_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\correlation_layer1d.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\crop_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\custom_data_layer.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\downsample_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\elu_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\flow_augmentation_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\flow_warp_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\l1loss_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\neg_relu_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\recurrent_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\resample_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\scale_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\solvers\adadelta_solver.cu" />
     <CudaCompile Include="..\..\src\caffe\solvers\adagrad_solver.cu" />
     <CudaCompile Include="..\..\src\caffe\solvers\adam_solver.cu" />
