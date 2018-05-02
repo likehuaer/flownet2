@@ -30,6 +30,13 @@ Compiling
 	edit your path <PythonDir></PythonDir>
 	open solution file & build
 
+Another way(later vs2015)
+
+	install vcpkg
+	collect libs & integration
+	 (boost,gflags,glog,hdf5,LevelDB,lmdb,OpenBLAS,OpenCV,protobuf,protoc)
+	.. build
+
 Running 
 =======
 
@@ -42,8 +49,12 @@ and download models:
 
     $ cd models 
     $ ./download-models.sh 
- 
-prepare old style(Flownet) prototext: 
+
+....
+
+Another way
+
+* prepare old style(Flownet) prototext: 
 
     prepare tmp_deploy.prototxt from FlowNet2-C_deploy.prototxt.template 
     ImageData & Flowriter using
@@ -74,12 +85,12 @@ prepare old style(Flownet) prototext:
     }
 }
 
-prepare old style(Flownet) input image txt: 
+* prepare old style(Flownet) input image txt: 
 
     script/img0.txt
     script/img1.txt
 
-run demo:
+* run demo:
 
     edit demo.py img0 = ''
     $ cd scripts
