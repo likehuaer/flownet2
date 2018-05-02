@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-
-
 @author: wakanawakana
 """
 
@@ -55,5 +53,4 @@ if __name__ == '__main__':
 
     flo = 'flownet2c-pred-0000000.flo'
     cmd = '{0} test -model {1} -weights {2} -iterations 1 -gpu 0'.format(caffe_bin, tmp_proto_file, weights_file)
-    subprocess.call(cmd)
-
+	subprocess.call(cmd)
