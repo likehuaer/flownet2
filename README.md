@@ -56,45 +56,45 @@ Another way
 
 * prepare old style(Flownet) prototext: 
 
-    prepare tmp_deploy.prototxt from FlowNet2-C_deploy.prototxt.template 
-    ImageData & Flowriter using
-    layer {
-        name: "Image1"
-        type: "ImageData"
-        top: "img0"
-        image_data_param {
-        source: "./img1.txt"
-        batch_size: 1
-    }
-    layer {
-        name: "Image2"
-        type: "ImageData"
-        top: "img1"
-        image_data_param {
-        source: "./img2.txt"
-        batch_size: 1
-    }
-    layer {
-        name: "FLOWriter"
-        type: "FLOWriter"
-        bottom: "predict_flow_final"
-        writer_param {
-        folder: "."
-        prefix: "flownets-pred-"
-        suffix: ""
-    }
-}
+		prepare tmp_deploy.prototxt from FlowNet2-C_deploy.prototxt.template 
+		ImageData & Flowriter using
+		layer {
+		    name: "Image1"
+		    type: "ImageData"
+		    top: "img0"
+		    image_data_param {
+		    source: "./img1.txt"
+		    batch_size: 1
+		}
+		layer {
+		    name: "Image2"
+		    type: "ImageData"
+		    top: "img1"
+		    image_data_param {
+		    source: "./img2.txt"
+		    batch_size: 1
+		}
+		layer {
+		    name: "FLOWriter"
+		    type: "FLOWriter"
+		    bottom: "predict_flow_final"
+		    writer_param {
+		    folder: "."
+		    prefix: "flownets-pred-"
+		    suffix: ""
+		}
+
 
 * prepare old style(Flownet) input image txt: 
 
-    script/img0.txt
-    script/img1.txt
+		script/img0.txt
+		script/img1.txt
 
 * run demo:
 
-    edit demo.py img0 = ''
-    $ cd scripts
-    $ demo.py (exsample not yet work)
+		edit demo.py img0 = ''
+		$ cd scripts
+		$ demo.py (exsample not yet work)
 
 Training
 ========
