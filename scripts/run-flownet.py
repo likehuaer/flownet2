@@ -47,7 +47,8 @@ vars['ADAPTED_HEIGHT'] = int(ceil(height/divisor) * divisor)
 vars['SCALE_WIDTH'] = width / float(vars['ADAPTED_WIDTH']);
 vars['SCALE_HEIGHT'] = height / float(vars['ADAPTED_HEIGHT']);
 
-tmp = tempfile.NamedTemporaryFile(mode='w', delete=True)
+#tmp = tempfile.NamedTemporaryFile(mode='w', delete=True)
+tmp = open('./tmp.prototxt', 'w')
 
 proto = open(args.deployproto).readlines()
 for line in proto:
