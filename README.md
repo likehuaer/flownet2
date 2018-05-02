@@ -74,6 +74,9 @@ caffe and the net are loaded only once.
 
 Another way
 
+    $ demo.py model(s,ss,c,cs,..) \ 
+              x.png, y.png z.flo
+
 * prepare old style(Flownet) prototext: 
 
 		prepare tmp_deploy.prototxt from FlowNet2-C_deploy.prototxt.template 
@@ -112,7 +115,7 @@ Another way
 
 * run demo:
 
-		edit demo.py img0 = ''
+		edit another_demo.py img0 = ''
 		$ cd scripts
 		$ demo.py
 
