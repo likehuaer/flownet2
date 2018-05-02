@@ -112,7 +112,7 @@ Another way
 
 		edit demo.py img0 = ''
 		$ cd scripts
-		$ demo.py (exsample not yet work)
+		$ demo.py
 
 Training
 ========
