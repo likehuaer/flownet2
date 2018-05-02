@@ -50,7 +50,7 @@ const int NPY_DTYPE = NPY_FLOAT32;
 // Selecting mode.
 void set_mode_cpu() { Caffe::set_mode(Caffe::CPU); }
 void set_mode_gpu() { Caffe::set_mode(Caffe::GPU); }
-void set_logging_disabled() { Caffe::set_logging(false); }
+void set_logging_disabled() { /*Caffe::set_logging(false);*/ }
 
 
 // For convenience, check that input files can be opened, and raise an
