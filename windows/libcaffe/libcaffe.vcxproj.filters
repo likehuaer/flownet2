@@ -22,22 +22,22 @@
     <Filter Include="include\proto">
       <UniqueIdentifier>{f9e33710-c82c-4808-90e7-96620a190b3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="cu">
-      <UniqueIdentifier>{9a64cba7-8bef-4df3-b933-adec019daadb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="cu\layers">
-      <UniqueIdentifier>{96fba2c6-dad0-4766-b354-08a7768d57d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="cu\util">
-      <UniqueIdentifier>{e4995612-1b91-40ea-9756-44382eddca40}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\solvers">
       <UniqueIdentifier>{c820c58e-d861-4d88-8b18-2180996d0657}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\layer">
       <UniqueIdentifier>{d04e5850-efaf-42d2-84b6-6de395cb02e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="cu\solvers">
+    <Filter Include="src\cu">
+      <UniqueIdentifier>{9a64cba7-8bef-4df3-b933-adec019daadb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cu\layers">
+      <UniqueIdentifier>{96fba2c6-dad0-4766-b354-08a7768d57d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cu\util">
+      <UniqueIdentifier>{e4995612-1b91-40ea-9756-44382eddca40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cu\solvers">
       <UniqueIdentifier>{48cd08d6-7328-4c6c-b336-35011452e78a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -355,6 +355,12 @@
       <Filter>src\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\accum_layer.cpp">
+      <Filter>src\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caffe\layers\channel_norm_layer.cpp">
       <Filter>src\layers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -707,190 +713,199 @@
     <ClInclude Include="..\..\include\caffe\layers\data_augmentation_layer.hpp">
       <Filter>include\layer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\caffe\layers\channel_norm_layer.hpp">
+      <Filter>include\layer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\src\caffe\layers\contrastive_loss_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\euclidean_loss_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\sigmoid_cross_entropy_loss_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\softmax_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\softmax_loss_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\absval_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\bnll_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_relu_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_sigmoid_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_softmax_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_tanh_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\dropout_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\power_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\relu_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\sigmoid_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\tanh_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\threshold_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\concat_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\eltwise_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\inner_product_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\lrn_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\mvn_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\silence_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\slice_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\split_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\base_data_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\hdf5_data_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\hdf5_output_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\util\im2col.cu">
-      <Filter>cu\util</Filter>
+      <Filter>src\cu\util</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\util\math_functions.cu">
-      <Filter>cu\util</Filter>
+      <Filter>src\cu\util</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\reduction_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\prelu_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\deconv_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\im2col_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\conv_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\batch_norm_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\batch_reindex_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_conv_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_lcn_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_lrn_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_pooling_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\pooling_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\exp_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\filter_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\log_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\tile_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\embed_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\correlation_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\l1loss_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\resample_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\flow_warp_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\generate_augmentation_parameters_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\lpq_loss_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\lstm_unit_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\solvers\sgd_solver.cu">
-      <Filter>cu\solvers</Filter>
+      <Filter>src\cu\solvers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\solvers\adadelta_solver.cu">
-      <Filter>cu\solvers</Filter>
+      <Filter>src\cu\solvers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\solvers\adagrad_solver.cu">
-      <Filter>cu\solvers</Filter>
+      <Filter>src\cu\solvers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\solvers\adam_solver.cu">
-      <Filter>cu\solvers</Filter>
+      <Filter>src\cu\solvers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\solvers\nesterov_solver.cu">
-      <Filter>cu\solvers</Filter>
+      <Filter>src\cu\solvers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\solvers\rmsprop_solver.cu">
-      <Filter>cu\solvers</Filter>
+      <Filter>src\cu\solvers</Filter>
     </CudaCompile>
     <CudaCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cu">
-      <Filter>cu\layers</Filter>
+      <Filter>src\cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\accum_layer.cu">
+      <Filter>src\cu\layers</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\caffe\layers\channel_norm_layer.cu">
+      <Filter>src\cu\layers</Filter>
     </CudaCompile>
   </ItemGroup>
   <ItemGroup>

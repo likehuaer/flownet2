@@ -102,6 +102,7 @@
     <ClCompile Include="..\..\src\caffe\internal_thread.cpp" />
     <ClCompile Include="..\..\src\caffe\layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\absval_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\accum_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\accuracy_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\argmax_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\augmentation_layer_base.cpp" />
@@ -110,6 +111,7 @@
     <ClCompile Include="..\..\src\caffe\layers\batch_norm_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\batch_reindex_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\bnll_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\layers\channel_norm_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\concat_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\contrastive_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\layers\conv_layer.cpp" />
@@ -225,6 +227,7 @@
     <ClInclude Include="..\..\include\caffe\layers\batch_reindex_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\bias_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\bnll_layer.hpp" />
+    <ClInclude Include="..\..\include\caffe\layers\channel_norm_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\concat_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\contrastive_loss_layer.hpp" />
     <ClInclude Include="..\..\include\caffe\layers\conv_layer.hpp" />
@@ -375,6 +378,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <CudaCompile Include="..\..\src\caffe\layers\accum_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\channel_norm_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\correlation_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\data_augmentation_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\flow_warp_layer.cu" />
