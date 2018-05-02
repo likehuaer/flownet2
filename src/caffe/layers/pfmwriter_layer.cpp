@@ -26,8 +26,12 @@ using namespace cimg_library;
 #include <iostream>
 #include <fstream>
 #include <omp.h>
+#if defined (_MSC_VER)
+#include <direct.h>
+#include <windows.h>
+#else
 #include <sys/dir.h>
-
+#endif
 using std::max;
 
 namespace caffe {
@@ -44,7 +48,18 @@ template <typename Dtype>
 void PFMWriterLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,
       const vector<Blob<Dtype>*>& top)
 {
-    DIR* dir = opendir(this->layer_param_.writer_param().folder().c_str());
+#if defined (_MSC_VER)
+	HANDLE hFind;
+	WIN32_FIND_DATA FindFileData;
+	hFind = FindFirstFile((LPCWSTR)this->layer_param_.writer_param().folder().c_str(), &FindFileData);
+	if (hFind != INVALID_HANDLE_VALUE){
+		FindClose(hFind);
+	}
+	else {
+		int retval = _mkdir(this->layer_param_.writer_param().folder().c_str());
+	}
+#else
+	DIR* dir = opendir(this->layer_param_.writer_param().folder().c_str());
     if (dir)
         closedir(dir);
     else if (ENOENT == errno) {
@@ -52,6 +67,7 @@ void PFMWriterLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,
         int retval = system(cmd.c_str());
         (void)retval;
     }
+#endif
 
     CHECK_EQ(bottom.size(), 1) << "PFMWRITER layer takes one input";
 }
